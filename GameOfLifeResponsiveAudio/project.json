@@ -1,0 +1,84 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Conway's Game of Life with an audio responsive component.\n\nhttps://github.com/SageBinder/WallpaperEngine-Conway-Life-Audio-Responsive\n\nThis is my first wallpaper, so thank you to kasora, whose code helped get me started.\n\nOPTIONS:\n--- Rulestring ---\nThe rulestring option allows you to change the rules regarding when cells are born and when cells die. The default value represents the standard Conway's Game of Life. Rulestrings are expected in B/S notation. More info here: https://www.conwaylife.com/wiki/Rulestring. For other interesting rulestrings, visit https://conwaylife.com/wiki/Cellular_automaton#Generalizations.\n\nDefault value: B38/S23\n\n--- Low Color ---\nThe color of the cells spawned by the lowest frequency (by default, lower frequencies control the cells on the left side of the screen). The wallpaper will automatically create a gradient between the low and high frequency colors.\n\nDefault value: #00c7ff\n\n--- High Color ---\nThe color of the cells spawned by the highest frequency (by default, higher frequencies control the cells on the right side of the screen). The wallpaper will automatically create a gradient between the low and high frequency colors.\n\nDefault value: #ff00ff\n\n--- Background Color ---\nThe solid color of the background. Pretty self-explanatory.\n\nDefault value: #000000\n\n--- Generations Per Second ---\nThe number of cell generations computed each second. Keep in mind that Wallpaper Engine provides audio data at 30 updates per second.\n\nDefault value: 16\n\n--- Audio Height Amplification ---\nWallpaper Engine provides audio data in the form of an 128-length array where each element represents the volume of a corresponding frequency. The value of each element can range from 0.0 to 1.0, with 0.0 representing no sound and 1.0 representing maximum volume.\n\nIf a sound is too quiet, it may not trigger any cells to spawn, or it may only trigger the first one or two cells to spawn. This doesn't create very interesting activity. To remedy this, there is the option to amplify the height of the cells spawned by the audio. This works by taking the nth root of the audio data (remember, the audio data ranges from 0.0 to 1.0), where n is the value provided by the Audio Height Amplification option. For example, if the Audio Height Amplification option is set to 2, then a frequency volume of 0.1 will become 0.1^(1/2), which is 0.31. As you can see, this option will help make quieter sounds appear more prominent on the wallpaper. An Audio Height Amplification value of 1 represents no amplification (the audio data from Wallpaper Engine will be used directly with no modification).\n\nI find this option to be more necessary with genres such as classical music where there are often long quiet sections of music. Other genres such as electronic music or pop music don't typically require any amplification to create interesting activity on the wallpaper, at least in my experience.\n\nThis option can be set as high as 5, which would mean taking the 5th root of the audio data, but I don't really think any value above 2 is necessary to create interesting wallpaper activity. Play around with it for yourself!\n\nDefault value: 1",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"audioheightamplification" : 
+			{
+				"fraction" : true,
+				"index" : 5,
+				"max" : 5,
+				"min" : 0.10000000000000001,
+				"order" : 105,
+				"precision" : 2,
+				"step" : 0.10000000000000001,
+				"text" : "Audio Height Amplification",
+				"type" : "slider",
+				"value" : 1
+			},
+			"backgroundcolor" : 
+			{
+				"index" : 3,
+				"order" : 103,
+				"text" : "Background Color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"generationspersecond" : 
+			{
+				"fraction" : false,
+				"index" : 4,
+				"max" : 60,
+				"min" : 1,
+				"order" : 104,
+				"text" : "Generations Per Second",
+				"type" : "slider",
+				"value" : 16
+			},
+			"highcolor" : 
+			{
+				"index" : 2,
+				"order" : 102,
+				"text" : "High Color",
+				"type" : "color",
+				"value" : "0 0.7803921568627451 1"
+			},
+			"lowcolor" : 
+			{
+				"index" : 1,
+				"order" : 101,
+				"text" : "Low Color",
+				"type" : "color",
+				"value" : "1 0 1"
+			},
+			"rulestring" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "Rulestring",
+				"type" : "textinput",
+				"value" : "B3/S23"
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		},
+		"supportsaudioprocessing" : true
+	},
+	"name" : "Conway's Game of Life with reactive audio",
+	"preview" : "preview.jpg",
+	"tags" : [ "Audio responsive" ],
+	"title" : "Conway's Game of Life with Responsive Audio",
+	"type" : "web",
+	"version" : 6,
+	"visibility" : "public",
+	"workshopid" : "2432353902",
+	"workshopurl" : "steam://url/CommunityFilePage/2432353902"
+}
